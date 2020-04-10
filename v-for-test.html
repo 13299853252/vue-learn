@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in arr">
+					{{index}}清华：{{item}}
+				</li>
+			</ul>
+			<h2 v-for="item in food">
+				{{item.name}}
+			</h2>
+			<input type="button" value="添加" @click="add"/>
+			<input type="button" value="减小" @click="sub"/>
+		</div>
+		
+		
+		
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					arr:["beijing","shanghai","guangzhou","shenzhen"],
+					food:[
+						{name:"西瓜"},
+						{name:"绿色"}
+					]
+				},
+				methods:{
+					add:function(){
+						//this.arr.push(["qinghai"]),
+						this.food.push({name:"香蕉"});
+					},
+					sub:function(){
+						this.food.shift()
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

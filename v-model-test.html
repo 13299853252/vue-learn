@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			
+			<h2>v-model用于双向数据绑定,他可以便捷的获取和设置表单元素的值，
+			绑定的数据会和表单元素的值相关联。。绑定元素的值<--->表单元素的值</h2>
+			<input type="text"  v-model="message" @keyup.enter="getMess"/>
+			<h2>{{message}}</h2>
+			
+			<input type="button" value="修改mess" @click="setMess"/>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					message:"魏云是傻逼"
+				},
+				methods:{
+					getMess:function(){
+						alert(this.message);
+					},
+					setMess:function(){
+						this.message="wiwei耶斯";
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

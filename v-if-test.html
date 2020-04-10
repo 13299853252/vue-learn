@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="app">
+			<p>v-if方法和v-show方法的不同是，v-if直接操作DOM树，而v-show是操作样式</p>
+			<input type="button" name="" value="切换" @click="changeIsShow"/>
+			<p v-if="isShow">魏云是傻逼</p>
+			<h2 v-if="temper>=40">热死啦</h2>
+		</div>
+		
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					temper:30,
+					isShow:false
+				},
+				methods:{
+					changeIsShow:function(){
+						this.isShow=!this.isShow
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

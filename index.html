@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			{{ message }},
+			<h3>{{person}}</h3>
+			
+			<h3>{{person.name}}</h3>
+			
+			<h3>{{ habby[2] }}</h3>
+			
+			<h2 v-text="info+'!'"></h2>
+			
+			<h4 v-html="content"></h4>
+			
+			
+		</div>
+		
+		
+		
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					message:"wiwei",
+					info:"测试v-text",
+					person:{
+						name:"weiyun",
+						age:123
+					},
+					habby:["chi","ri","caobi"],
+					content:"<a href='https://www.baidu.com'>百度</a>"
+				}	
+			})
+		</script>
+	</body>
+</html>

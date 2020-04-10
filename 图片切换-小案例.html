@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#app{
+				width: 700px;
+				height: 500px;
+				border: 5px solid pink;
+			}
+			#imgSty{
+				width: 600px;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" value="上一张" v-on:click="before" v-show="index!=0"/>
+			<img v-bind:src="imgArr[index]" id="imgSty">
+			<input type="button" value="下一张" @click="next" v-show="index<imgArr.length-1"/>	
+		</div>
+		
+		
+		
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					index:0,
+					imgArr:["shabi.jpg","v-bind-test.jpg","shuang.jpg","dog.jpg"],
+				},
+				methods:{
+					before:function(){
+						this.index--;
+					},
+					next:function(){
+						this.index++;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
